@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NYamPie - Sweet Pie Innovation</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-pink-light: #ffe6ea;
+        --bg-pink-main: #fbcfe8;
+        --pink-accent: #e879f9;
+        --pink-dark: #db2777;
+        --text-dark: #831843;
+        --card-bg: #ffffff;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg-pink-light);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      .brand-font {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(219, 39, 119, 0.1);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--pink-dark) !important;
+      }
+
+      .nav-link {
+        color: var(--text-dark) !important;
+        font-weight: 500;
+        margin: 0 8px;
+      }
+
+      .nav-link:hover {
+        color: var(--pink-dark) !important;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(135deg, #fbcfe8 0%, #ffe6ea 100%);
+        padding: 80px 0 60px 0;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--pink-dark);
+        line-height: 1.2;
+      }
+
+      .btn-pink {
+        background-color: var(--pink-dark);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(219, 39, 119, 0.3);
+      }
+
+      .btn-pink:hover {
+        background-color: #be185d;
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* Feature Cards */
+      .feature-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 25px;
+        text-align: center;
+        border: 1px solid #fbcfe8;
+        box-shadow: 0 8px 20px rgba(251, 207, 232, 0.5);
+        height: 100%;
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--pink-dark);
+        margin-bottom: 15px;
+      }
+
+      /* Product Cards */
+      .product-card {
+        background: #ffffff;
+        border-radius: 20px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 10px 25px rgba(219, 39, 119, 0.12);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        height: 100%;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(219, 39, 119, 0.2);
+      }
+
+      .product-img-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 75%; /* 4:3 Aspect Ratio */
+        overflow: hidden;
+        background-color: #fce7f3;
+      }
+
+      .product-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .badge-flavor {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: var(--pink-dark);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      /* Story Section */
+      .story-box {
+        background: #ffffff;
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(219, 39, 119, 0.1);
+        border: 2px solid #fbcfe8;
+      }
+
+      /* Social Media Footer */
+      .social-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #ffffff;
+        color: var(--pink-dark);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin: 0 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .social-btn:hover {
+        background: var(--pink-dark);
+        color: #ffffff;
+        transform: translateY(-4px);
+      }
+
+      footer {
+        background-color: #fbcfe8;
+        border-top: 2px solid #f472b6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><i class="fa-solid fa-pie me-2"></i>NYamPie</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#varian">Varian Rasa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang">Tentang Kami</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a
+                class="btn btn-pink text-white"
+                href="https://wa.me/6281234567890?text=Halo%20NYamPie,%20saya%20ingin%20pesan%20Sweet%20Pie!"
+                target="_blank"
+              >
+                <i class="fa-brands fa-whatsapp me-2"></i>Pesan Sekarang
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container min-vh-75 d-flex align-items-center pt-5">
+        <div class="row align-items-center g-4 w-100">
+          <div class="col-lg-6 text-center text-lg-start">
+            <span
+              class="badge bg-white text-danger mb-3 px-3 py-2 rounded-pill shadow-sm fw-bold"
+            >
+              🍰 Sweet Pie Innovation
+            </span>
+            <h1 class="hero-title mb-3">
+              Kelembutan Pai Susu Modern dalam Setiap Gigitan
+            </h1>
+            <p class="lead text-muted mb-4">
+              Nikmati sensasi pai susu mini yang renyah di luar dan lembut
+              melimpah di dalam dengan 5 varian rasa kekinian![cite: 2]
+            </p>
+            <div
+              class="d-flex gap-3 justify-content-center justify-content-lg-start"
+            >
+              <a href="#varian" class="btn btn-pink">Lihat Varian Rasa</a>
+              <a
+                href="#tentang"
+                class="btn btn-outline-danger rounded-pill px-4 py-2"
+                >Cerita Kami</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img
+              src="buah.jpeg"
+              alt="NYamPie Banner"
+              class="img-fluid rounded-4 shadow-lg border border-4 border-white"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-heart"></i></div>
+              <h5 class="fw-bold mb-2">Dibuat Dengan Kasih</h5>
+              <p class="text-muted small mb-0">
+                Diproduksi secara higienis menggunakan bahan berkualitas premium
+                untuk hasil rasa terbaik.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-gem"></i></div>
+              <h5 class="fw-bold mb-2">Ukuran Mini Praktis</h5>
+              <p class="text-muted small mb-0">
+                Ukurannya mini dan praktis, mudah dinikmati kapan saja dan di
+                mana saja
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
+              <h5 class="fw-bold mb-2">5 Varian Favorit</h5>
+              <p class="text-muted small mb-0">
+                Pilihan varian rasa kekinian khas NYamPie yang siap memanjakan
+                lidah kamu
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Varian Rasa Section -->
+    <section id="varian" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold text-danger mb-2">
+            5 Varian Rasa Lezat
+          </h2>
+          <p class="text-muted">
+            Pilih rasa favoritmu dan rasakan kelezatannya!
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Original -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card product-card">
+              <div class="product-img-wrapper">
+                <span class="badge-flavor">Classic</span>
+                <img src="PAI.png" class="product-img" alt="Original" />
+              </div>
+              <div class="card-body p-4 text-center">
+                <h4 class="fw-bold text-danger">Original</h4>
+                <p class="text-muted small">
+                  Fla susu manis nan lembut dengan aroma vanilla alami yang
+                  klasik dan khas[cite: 2, 7].
+                </p>
+                <a
+                  href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20NYamPie%20Varian%20Original"
+                  target="_blank"
+                  class="btn btn-pink btn-sm w-100 mt-2"
+                  >Pesan Original</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Matcha -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card product-card">
+              <div class="product-img-wrapper">
+                <span class="badge-flavor">Japanese Vibe</span>
+                <img src="macta.png" class="product-img" alt="Matcha" />
+              </div>
+              <div class="card-body p-4 text-center">
+                <h4 class="fw-bold text-danger">Matcha</h4>
+                <p class="text-muted small">
+                  Perpaduan harum teh hijau Jepang dengan manis lembut fla susu
+                  NYamPie
+                </p>
+                <a
+                  href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20NYamPie%20Varian%20Matcha"
+                  target="_blank"
+                  class="btn btn-pink btn-sm w-100 mt-2"
+                  >Pesan Matcha</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Red Velvet -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card product-card">
+              <div class="product-img-wrapper">
+                <span class="badge-flavor">Premium</span>
+                <img
+                  src="redvelvet.jpeg"
+                  class="product-img"
+                  alt="Red Velvet"
+                />
+              </div>
+              <div class="card-body p-4 text-center">
+                <h4 class="fw-bold text-danger">Red Velvet</h4>
+                <p class="text-muted small">
+                  Cita rasa red velvet khas yang mewah dipadu kulit pai renyah
+                </p>
+                <a
+                  href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20NYamPie%20Varian%20Red%20Velvet"
+                  target="_blank"
+                  class="btn btn-pink btn-sm w-100 mt-2"
+                  >Pesan Red Velvet</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Taro -->
+          <div class="col-md-6 col-lg-4 offset-lg-2">
+            <div class="card product-card">
+              <div class="product-img-wrapper">
+                <span class="badge-flavor">Unique Choice</span>
+                <img src="taro1.jpeg" class="product-img" alt="Taro" />
+              </div>
+              <div class="card-body p-4 text-center">
+                <h4 class="fw-bold text-danger">Taro</h4>
+                <p class="text-muted small">
+                  Aroma manis gurih taro pilihan yang memikat dan bikin
+                  ketagihan
+                </p>
+                <a
+                  href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20NYamPie%20Varian%20Taro"
+                  target="_blank"
+                  class="btn btn-pink btn-sm w-100 mt-2"
+                  >Pesan Taro</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Cokelat -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card product-card">
+              <div class="product-img-wrapper">
+                <span class="badge-flavor">All Time Favorite</span>
+                <img src="coklat.jpeg" class="product-img" alt="Cokelat" />
+              </div>
+              <div class="card-body p-4 text-center">
+                <h4 class="fw-bold text-danger">Cokelat</h4>
+                <p class="text-muted small">
+                  Isian cokelat kaya rasa yang lumer sempurna di setiap gigitan
+                </p>
+                <a
+                  href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20NYamPie%20Varian%20Cokelat"
+                  target="_blank"
+                  class="btn btn-pink btn-sm w-100 mt-2"
+                  >Pesan Cokelat</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="tentang" class="py-5">
+      <div class="container">
+        <div class="story-box text-center">
+          <span class="fs-1 text-danger mb-2 d-block"
+            ><i class="fa-solid fa-quote-left"></i
+          ></span>
+          <h3 class="fw-bold text-danger mb-3">
+            Sepotong Kebahagiaan Dari NYamPie
+          </h3>
+          <p class="lead text-muted mx-auto" style="max-width: 800px">
+            Usaha "NYamPie" berawal dari kecintaan kami terhadap dunia kuliner
+            dan keinginan menghadirkan cemilan berkualitas tinggi yang
+            terjangkau. Dengan memadukan renyahnya kulit pai dan kelembutan
+            isian fla khas dalam varian rasa modern, NYamPie siap menemani
+            setiap momen spesialmu
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer & Social Media -->
+    <footer class="py-5 text-center">
+      <div class="container">
+        <h3 class="brand-font fw-bold text-danger mb-3">NYamPie</h3>
+        <p class="text-muted mb-4">
+          Ikuti media sosial kami untuk info produk dan pemesanan:
+        </p>
+
+        <div class="d-flex justify-content-center mb-4">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            class="social-btn"
+            title="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            class="social-btn"
+            title="WhatsApp"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            class="social-btn"
+            title="TikTok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            class="social-btn"
+            title="Facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+        </div>
+
+        <hr class="border-danger opacity-25 my-4" />
+        <p class="small text-muted mb-0">
+          &copy; 2026 NYamPie Sweet Pie Innovation. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
